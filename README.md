@@ -11,13 +11,22 @@ python3 -m http.server 8080
 
 Open http://localhost:8080
 
-## Deploy (GitHub Pages)
+## Deploy to GitHub Pages
 
-1. Push this repo to GitHub.
-2. **Settings → Pages → Source**: Deploy from branch `main` / folder `/ (root)`.
-3. Site URL will be `https://<user>.github.io/<repo>/`.
+From this folder:
 
-Or enable the included GitHub Actions workflow for Pages.
+```bash
+# 1) Sign in (one time)
+gh auth login -h github.com -p https -w
+
+# 2) Create the repo and push
+gh repo create wedding-invite --public --source=. --remote=origin --push
+
+# 3) Turn on Pages: repo Settings → Pages → Source = GitHub Actions
+#    (workflow already in .github/workflows/pages.yml)
+```
+
+Live URL will be: `https://<your-username>.github.io/wedding-invite/`
 
 ## Customize
 
