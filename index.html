@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prakash P & Geetha A</title>
+<meta name="theme-color" content="#6e0b12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&family=Libre+Baskerville:wght@400;700&family=Cormorant+Garamond:wght@400;500&family=Alex+Brush&family=Clicker+Script&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="locked">
+
+<!-- ======================= COVER (from first.mp4 intro) ======================= -->
+<div class="cover" id="cover">
+  <div class="cover-sparks" id="coverSparks" aria-hidden="true"></div>
+  <div class="card" id="inviteCard">
+    <img class="card-bg" src="assets/cover-card-bg.jpg" alt="" onerror="this.remove()">
+    <img class="dec card-pillar card-pillar-l" src="assets/side.webp" alt="">
+    <img class="dec card-pillar card-pillar-r" src="assets/side.webp" alt="">
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.3 3.3 4.5 7 4.5c2 0 3.5 1.1 5 3 1.5-1.9 3-3 5-3 3.7 0 6 3.8 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg>
+    </div>
+    <div class="n" data-f="groomShort"></div>
+    <div class="amp">&amp;</div>
+    <div class="n" data-f="brideShort"></div>
+    <div class="rule" aria-hidden="true">❦</div>
+    <div class="invites">Cordially Invites</div>
+    <button class="open-btn" id="openBtn" type="button">Open</button>
+  </div>
+</div>
+
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<main class="page">
+
+  <!-- ======================= HERO (positions match invite screenshots / index2) ======================= -->
+  <section class="hero">
+    <div class="hero-stage" aria-hidden="true">
+      <img class="dec floral" src="assets/floral.webp" alt="">
+      <img class="dec arch" src="assets/arch.webp" alt="">
+      <img class="dec col col-l" src="assets/side.webp" alt="">
+      <img class="dec col col-r" src="assets/side.webp" alt="">
+      <img class="dec kolam" src="assets/kolam.webp" alt="">
+      <img class="dec bell bell-l" src="assets/bell.webp" alt="">
+      <img class="dec bell bell-r" src="assets/bell.webp" alt="">
+      <img class="dec om" src="assets/om.webp" alt="">
+    </div>
+    <div class="hero-text">
+      <div class="eyebrow">SAVE THE DATE</div>
+      <div class="n" data-f="groom"></div>
+      <div class="amp">&amp;</div>
+      <div class="n" data-f="bride"></div>
+    </div>
+  </section>
+
+  <!-- ======================= CEREMONY ======================= -->
+  <section class="reveal ceremony">
+    <img class="dec side-col side-l" src="assets/side.webp" alt="" onerror="this.remove()">
+    <img class="dec side-col side-r" src="assets/side.webp" alt="" onerror="this.remove()">
+    <h2>Ceremony Info</h2>
+    <div class="parents" id="parents" hidden>
+      <div>Mr. &amp; Mrs.<br><b data-f="groomFather"></b><br><b data-f="groomMother"></b></div>
+      <div class="bar"></div>
+      <div>Mr. &amp; Mrs.<br><b data-f="brideFather"></b><br><b data-f="brideMother"></b></div>
+    </div>
+    <div class="big-name" data-f="groom"></div>
+    <div class="role">Groom</div>
+    <div class="amp-lg">&amp;</div>
+    <div class="big-name" style="margin-top:10px" data-f="bride"></div>
+    <div class="role">Bride</div>
+  </section>
+
+  <div class="divider-wrap"><img class="dec divider" src="assets/divider.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'divider-css',textContent:'❖'}))"></div>
+
+  <!-- ======================= RECEPTION ======================= -->
+  <section class="reveal reception">
+    <img class="dec side-flower side-l" src="assets/side-flowers.webp" alt="" onerror="this.remove()">
+    <img class="dec side-flower side-r" src="assets/side-flowers.webp" alt="" onerror="this.remove()">
+    <img class="dec frame-ornament" src="assets/bg-texture.webp" alt="" onerror="this.remove()">
+    <h2 data-f="eventTitle"></h2>
+    <div class="sub" data-f="eventSub"></div>
+    <div class="when">
+      <div class="when-top">
+        <div class="time" data-f="timeText"></div>
+        <div class="day" data-f="dayText"></div>
+      </div>
+      <div class="when-main">
+        <div class="dd" data-f="dateNum"></div>
+        <div class="bar"></div>
+        <div class="month" data-f="monthYear"></div>
+      </div>
+    </div>
+    <div class="countdown-label">COUNTDOWN</div>
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <!-- ======================= CALENDAR ======================= -->
+  <section class="reveal">
+    <div class="cal-wrap">
+      <img class="dec cal-frame" src="assets/calendar-frame.webp" alt="" onerror="this.remove()">
+      <div class="cal-inner">
+        <div class="cal-title" id="calTitle"></div>
+        <div class="cal" id="cal"></div>
+      </div>
+    </div>
+    <a class="link" id="addCal" target="_blank" rel="noopener">Add to Calendar</a>
+  </section>
+
+  <div class="divider-wrap"><img class="dec divider" src="assets/divider.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'divider-css',textContent:'❖'}))"></div>
+
+  <!-- ======================= VENUE ======================= -->
+  <section class="reveal venue">
+    <h2 class="venue-title" data-f="venueTitle"></h2>
+    <p class="addr" data-f="venueAddress"></p>
+    <div class="map">
+      <iframe id="mapFrame" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Venue map"></iframe>
+      <a class="open" id="mapOpen" target="_blank" rel="noopener">Open in Maps ↗</a>
+    </div>
+    <a class="directions" id="directions" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>Get directions
+    </a>
+  </section>
+
+  <div class="divider-wrap"><img class="dec divider" src="assets/divider.webp" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'divider-css',textContent:'❖'}))"></div>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer>
+    <p class="thanks" data-f="footerText"></p>
+    <div class="footer-stage">
+      <img class="dec footer-art" src="assets/footer.webp" alt="" onerror="this.remove()">
+    </div>
+  </footer>
+</main>
+
+<script>
+/* =====================================================================
+   EDIT YOUR DETAILS HERE
+   ===================================================================== */
+const INVITE = {
+  groom: "Prakash P",
+  bride: "Geetha A",
+  groomShort: "Prakash",          // shown on the cover card
+  brideShort: "Geetha",
+
+  // Leave all four empty ("") to hide the parents block
+  groomFather: "", groomMother: "",
+  brideFather: "", brideMother: "",
+
+  eventTitle: "Reception Info",
+  eventSub: "The reception will take place at:",
+  // Local date & time of the event (24h) and duration in hours
+  date: "2026-11-15T09:00:00+05:30",
+  durationHours: 3, // 9:00 AM – 12:00 PM
+
+  venueTitle: "WEDDING RECEPTION\nVENUE",
+  venueName: "Hotel Aranmanai",
+  venueAddress: "Hotel Aranmanai, 40/640/6, Rangai Gounder Street, Flower Market, Sukrawar Pettai, R.S. Puram, Coimbatore, Tamil Nadu 641001",
+  mapsQuery: "Hotel Aranmanai, Rangai Gounder Street, Coimbatore",   // what to search on Google Maps
+
+  footerText: "Your presence would be the greatest gift we could receive!",
+};
+/* ===================================================================== */
+
+(function () {
+  const d = new Date(INVITE.date);
+  const tz = "Asia/Kolkata";
+  const fmt = (o) => new Intl.DateTimeFormat("en-IN", { timeZone: tz, ...o }).format(d);
+
+  const derived = {
+    timeText: fmt({ hour: "numeric", minute: "2-digit", hour12: true }).toUpperCase(),
+    dayText: fmt({ weekday: "long" }).toUpperCase(),
+    dateNum: fmt({ day: "numeric" }),
+    monthYear: fmt({ month: "long" }).toUpperCase() + "\n" + fmt({ year: "numeric" }),
+  };
+  document.querySelectorAll("[data-f]").forEach((el) => {
+    const k = el.dataset.f;
+    const val = INVITE[k] ?? derived[k] ?? "";
+    el.textContent = val;
+  });
+  document.title = `${INVITE.groom} & ${INVITE.bride}`;
+
+  if (INVITE.groomFather || INVITE.groomMother || INVITE.brideFather || INVITE.brideMother) {
+    document.getElementById("parents").hidden = false;
+  }
+
+  /* ---- countdown ---- */
+  const cd = document.getElementById("countdown");
+  const tick = () => {
+    let s = Math.max(0, Math.floor((d - Date.now()) / 1000));
+    if (s === 0) { cd.textContent = "Today is the day! 🎉"; return; }
+    const days = Math.floor(s / 86400); s %= 86400;
+    const h = Math.floor(s / 3600); s %= 3600;
+    const m = Math.floor(s / 60); s %= 60;
+    cd.textContent = `${days} days ${h} hours ${m} min ${s} sec`;
+  };
+  tick(); setInterval(tick, 1000);
+
+  /* ---- calendar (Monday first) ---- */
+  const y = +fmt({ year: "numeric" }), mo = +fmt({ month: "numeric" }) - 1, day = +derived.dateNum;
+  document.getElementById("calTitle").textContent = `${fmt({ month: "long" })} ${y}`;
+  const cal = document.getElementById("cal");
+  ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].forEach((w) => cal.insertAdjacentHTML("beforeend", `<div class="h">${w}</div>`));
+  const lead = (new Date(y, mo, 1).getDay() + 6) % 7;
+  const days = new Date(y, mo + 1, 0).getDate();
+  for (let i = 0; i < lead; i++) cal.insertAdjacentHTML("beforeend", `<div></div>`);
+  for (let i = 1; i <= days; i++) cal.insertAdjacentHTML("beforeend", `<div class="d${i === day ? " on" : ""}">${i}</div>`);
+
+  /* ---- add to calendar (Google Calendar) ---- */
+  const z = (t) => t.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+  const end = new Date(d.getTime() + INVITE.durationHours * 3600e3);
+  const gcal = new URL("https://calendar.google.com/calendar/render");
+  gcal.searchParams.set("action", "TEMPLATE");
+  gcal.searchParams.set("text", `${INVITE.groom} & ${INVITE.bride} – ${INVITE.eventTitle.replace(/ info$/i, "")}`);
+  gcal.searchParams.set("dates", `${z(d)}/${z(end)}`);
+  gcal.searchParams.set("location", INVITE.venueAddress);
+  document.getElementById("addCal").href = gcal.toString();
+
+  /* ---- map ---- */
+  const q = encodeURIComponent(INVITE.mapsQuery);
+  document.getElementById("mapFrame").src = `https://maps.google.com/maps?q=${q}&z=16&output=embed`;
+  document.getElementById("mapOpen").href = `https://www.google.com/maps/search/?api=1&query=${q}`;
+  document.getElementById("directions").href = `https://www.google.com/maps/dir/?api=1&destination=${q}`;
+
+  /* ---- reveal on scroll ---- */
+  const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && (e.target.classList.add("in"), io.unobserve(e.target))), { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  /* ---- cover ambient sparks + open burst (from first.mp4) ---- */
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const petals = document.getElementById("petals");
+  const coverSparks = document.getElementById("coverSparks");
+  const flowerSVG = (fill) =>
+    `<svg viewBox="0 0 20 20"><path fill="${fill}" d="M10 0c2 4 2 6 0 10C8 6 8 4 10 0zm0 20c-2-4-2-6 0-10 2 4 2 6 0 10zM0 10c4-2 6-2 10 0-4 2-6 2-10 0zm20 0c-4 2-6 2-10 0 4-2 6-2 10 0z"/></svg>`;
+  const fills = ["#f2c06e", "#ffdfaf", "#e8b4a0", "#ffffff", "#f6d98a"];
+
+  const makeSpark = (parent, cls) => {
+    const el = document.createElement("div");
+    el.className = cls;
+    const dur = 8 + Math.random() * 10;
+    el.style.left = Math.random() * 100 + "vw";
+    el.style.top = (-10 - Math.random() * 30) + "vh";
+    el.style.animationDuration = dur + "s";
+    el.style.animationDelay = (-Math.random() * dur) + "s";
+    el.style.setProperty("--dx", (Math.random() * 140 - 70) + "px");
+    el.style.setProperty("--rot", (Math.random() * 540 - 270) + "deg");
+    el.style.setProperty("--s", (0.45 + Math.random() * 0.9).toFixed(2));
+    el.style.setProperty("--o", (0.25 + Math.random() * 0.5).toFixed(2));
+    el.innerHTML = flowerSVG(fills[(Math.random() * fills.length) | 0]);
+    parent.appendChild(el);
+    return el;
+  };
+
+  if (!reduceMotion && coverSparks) {
+    for (let i = 0; i < 18; i++) makeSpark(coverSparks, "spark");
+  }
+
+  const spawnFall = () => {
+    const p = document.createElement("div");
+    p.className = "petal";
+    const dur = 6 + Math.random() * 5;
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = dur + "s";
+    p.style.setProperty("--dx", (Math.random() * 160 - 80) + "px");
+    p.style.setProperty("--rot", (Math.random() * 720 - 360) + "deg");
+    p.style.width = (12 + Math.random() * 14) + "px";
+    p.style.height = p.style.width;
+    p.innerHTML = flowerSVG(fills[(Math.random() * fills.length) | 0]);
+    petals.appendChild(p);
+    setTimeout(() => p.remove(), dur * 1000);
+  };
+
+  const burst = (count = 28) => {
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement("div");
+      p.className = "petal burst";
+      const ang = (Math.PI * 2 * i) / count + (Math.random() * 0.4);
+      const dist = 120 + Math.random() * 280;
+      p.style.setProperty("--dx", Math.cos(ang) * dist + "px");
+      p.style.setProperty("--dy", (Math.sin(ang) * dist * 0.55 + 220 + Math.random() * 320) + "px");
+      p.style.setProperty("--rot", (Math.random() * 720 - 360) + "deg");
+      p.style.setProperty("--s", (0.7 + Math.random() * 1.1).toFixed(2));
+      p.style.animationDuration = (1.4 + Math.random() * 1.6) + "s";
+      p.style.width = (14 + Math.random() * 16) + "px";
+      p.style.height = p.style.width;
+      p.innerHTML = flowerSVG(fills[(Math.random() * fills.length) | 0]);
+      petals.appendChild(p);
+      setTimeout(() => p.remove(), 3200);
+    }
+  };
+
+  let falling = null;
+  const startFalling = () => {
+    if (reduceMotion || falling) return;
+    falling = setInterval(spawnFall, 700);
+  };
+
+  /* ---- open the cover ---- */
+  document.getElementById("openBtn").addEventListener("click", () => {
+    const cover = document.getElementById("cover");
+    cover.classList.add("opening");
+    if (!reduceMotion) {
+      burst(32);
+      for (let i = 0; i < 10; i++) setTimeout(spawnFall, 90 * i);
+    }
+    setTimeout(() => {
+      cover.classList.add("gone");
+      document.body.classList.remove("locked");
+      startFalling();
+    }, 420);
+  });
+})();
+</script>
+</body>
+</html>
